@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
  build:
   # Variable expansion in working_directory not supported at this time
@@ -9,7 +9,6 @@ jobs:
   steps:
    - checkout
    - setup_remote_docker
-   - ZAP Scan
 
    - run: 
       name: Setup environment
@@ -33,7 +32,6 @@ jobs:
       command: |
           go test \
           github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
-   
    - deploy:
        command: |
          if [ "${CIRCLE_BRANCH}" == "master" ]; then
