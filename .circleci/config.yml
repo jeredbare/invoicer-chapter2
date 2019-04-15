@@ -37,7 +37,7 @@ jobs:
       name:
       command: | 
         docker run ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME}   
-        background: true  
+      background: true  
    - run:
       name:
       command: |
