@@ -38,6 +38,8 @@ type invoicer struct {
 }
 
 func main() {
+	const s = `<script type='text/javascript'>alert('xss');</script>`
+	fmt.Println(html.EscapeString(s))
 	escaped := html.EscapeString(`<script type='text/javascript'>alert('xss');</script>`)
 	fmt.Println(escaped)
 	var (
